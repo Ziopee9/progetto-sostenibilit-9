@@ -1,0 +1,234 @@
+/* --- RESET E STILI BASE --- */
+:root {
+    --barilla-blue: #003a70; /* Blu scuro iconico */
+    --barilla-red: #e31d2b;  /* Rosso iconico */
+    --text-dark: #333;
+    --text-muted: #666;
+    --bg-light: #f9f9f9;
+    --white: #ffffff;
+    --shadow: 0 10px 30px rgba(0,0,0,0.08);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Scorrimento lento quando si cliccano i link */
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Font moderno */
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+/* --- UTILITÀ --- */
+.text-center { text-align: center; }
+.text-muted { color: var(--text-muted); }
+.lead { font-size: 1.2rem; max-width: 800px; margin: 20px auto; }
+.subtitle { color: var(--barilla-red); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 10px; }
+h2 { font-size: 2.5rem; color: var(--barilla-blue); margin-bottom: 20px; }
+.mb-50 { margin-bottom: 50px; }
+.bg-light { background-color: var(--bg-light); }
+
+/* --- GRID SYSTEM BASIC --- */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* --- HEADER --- */
+header {
+    background-color: var(--white);
+    padding: 20px 0;
+    position: fixed; /* Rimane fisso in alto */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--barilla-blue);
+    letter-spacing: -1px;
+}
+
+.logo .dot { color: var(--barilla-red); }
+.logo .slogan { font-weight: 300; font-size: 1rem; color: var(--text-muted); margin-left: 5px; }
+
+nav ul { display: flex; gap: 30px; }
+nav a { font-weight: 600; color: var(--barilla-blue); font-size: 0.95rem; }
+nav a:hover { color: var(--barilla-red); }
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 80vh; /* 80% dell'altezza dello schermo */
+    /* IMPORTANTE: Assicurati di avere l'immagine 'hero-bg.jpg' */
+    background: linear-gradient(rgba(0,58,112, 0.8), rgba(0,58,112, 0.6)), url('hero-bg.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    margin-top: 80px; /* Spazio per l'header fisso */
+}
+
+.hero-content h1 { font-size: 3.5rem; font-weight: 700; max-width: 700px; line-height: 1.2; margin-bottom: 20px; }
+.hero-content p { font-size: 1.3rem; font-weight: 300; max-width: 600px; margin: 0 auto 40px auto; opacity: 0.9; }
+
+/* --- BOTTONI --- */
+.btn-primary {
+    background-color: var(--barilla-red);
+    color: var(--white);
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(227, 29, 43, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: #c41925;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(227, 29, 43, 0.4);
+}
+
+/* --- INFO CARDS (PILASTRI) --- */
+.info-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-bottom: 4px solid transparent;
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    border-bottom: 4px solid var(--barilla-red);
+}
+
+.info-card .icon { font-size: 3rem; margin-bottom: 20px; display: block; }
+.info-card h3 { color: var(--barilla-blue); margin-bottom: 15px; }
+.info-card p { color: var(--text-muted); font-size: 0.95rem; }
+
+/* --- DOWNLOAD SECTION (REPORT CARDS) --- */
+.download-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+}
+
+.report-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid #eee;
+    transition: var(--transition);
+}
+
+.report-card:hover {
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.report-card h3 { font-size: 1.8rem; color: var(--barilla-blue); margin-bottom: 15px; line-height: 1.3; }
+.report-card p { color: var(--text-muted); margin-bottom: 30px; font-size: 1rem; }
+
+.card-tag {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #e3f2fd; /* Blu chiarissimo */
+    color: var(--barilla-blue);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.file-info { font-size: 0.85rem; color: #999; font-weight: 300; }
+
+.btn-download {
+    background-color: #e3f2fd; /* Blu chiarissimo */
+    color: var(--barilla-blue);
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.btn-download:hover { background-color: var(--barilla-red); }
+
+/* Variante per report archiviati */
+.report-card.archived { background-color: #fcfcfc; border-color: #e3f2fd; /* Blu chiarissimo */ }
+.report-card.archived h3 { color: var(#e3f2fd; /* Blu chiarissimo */); }
+.report-card.archived .btn-download { background-color: #e3f2fd; /* Blu chiarissimo */ }
+.report-card.archived .btn-download:hover { background-color: var(--text-dark); }
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--barilla-blue);
+    color: rgba(255,255,255,0.7);
+    padding: 30px 0;
+    font-size: 0.85rem;
+    font-weight: 300;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    html { font-size: 14px; }
+    h2 { font-size: 2rem; }
+    .hero-content h1 { font-size: 2.5rem; }
+    nav ul { gap: 15px; }
+    .download-grid { grid-template-columns: 1fr; }
+}
